@@ -18,7 +18,7 @@ formRepairDate.setAttribute("max", today);
 
 async function save() {
 	showLoading();
-	const response = await fetch("http://localhost:8080/api/v1/cars", {
+	const response = await fetch("http://localhost:8080/api/v2/cars", {
 		method: "POST",
 		headers: {
 			"Accept-Language": "vi",

@@ -35,7 +35,7 @@ async function findAll() {
 		page: pageNumber.value,
 		size: pageSize.value
 	};
-	const url = new URL("http://localhost:8080/api/v1/cars");
+	const url = new URL("http://localhost:8080/api/v2/cars");
 	url.search = new URLSearchParams(params).toString();
 	const response = await fetch(url, {
 		method: "GET",
@@ -80,7 +80,7 @@ function showCars(cars) {
 
 async function deleteById(car) {
 	showLoading();
-	const response = await fetch("http://localhost:8080/api/v1/cars", {
+	const response = await fetch("http://localhost:8080/api/v2/cars", {
 		method: "DELETE",
 		headers: {
 			"Accept-Language": "vi",
@@ -140,7 +140,7 @@ function updatePagination({ first, last, pageable, totalPages }) {
 
 async function save() {
 	showLoading();
-	const response = await fetch("http://localhost:8080/api/v1/cars", {
+	const response = await fetch("http://localhost:8080/api/v2/cars", {
 		method: "PUT",
 		headers: {
 			"Accept-Language": "vi",

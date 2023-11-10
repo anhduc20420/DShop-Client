@@ -42,7 +42,7 @@ async function findAll() {
 		page: pageNumber.value,
 		size: pageSize.value
 	};
-	const url = new URL("http://localhost:8080/api/v1/accessories");
+	const url = new URL("http://localhost:8080/api/v2/accessories");
 	url.search = new URLSearchParams(params).toString();
 	const response = await fetch(url, {
 		method: "GET",
@@ -92,7 +92,7 @@ function showAccessories(accessories) {
 
 async function deleteById(id) {
 	showLoading();
-	const url = `http://localhost:8080/api/v1/accessories/${id}`;
+	const url = `http://localhost:8080/api/v2/accessories/${id}`;
 	const response = await fetch(url, {
 		method: "DELETE",
 		headers: {
@@ -151,8 +151,8 @@ async function save() {
 	showLoading();
 	const id = formId.value;
 	const url = id
-		? `http://localhost:8080/api/v1/accessories/${id}`
-		: "http://localhost:8080/api/v1/accessories";
+		? `http://localhost:8080/api/v2/accessories/${id}`
+		: "http://localhost:8080/api/v2/accessories";
 	const method = id ? "PUT" : "POST";
 	const response = await fetch(url, {
 		method: method,
